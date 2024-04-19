@@ -1,7 +1,8 @@
 name = "Sky130PDK"
 uuid = "3a9dc963-4db1-4336-a55a-41e26ba2a676"
 authors = ["JuliaHub, Inc. and other contributors"]
-version = "0.4.0"
+version = "0.5.0"
+
 
 [deps]
 BSIM4 = "fa7570ea-a14f-11ec-018e-d96f3217f940"
