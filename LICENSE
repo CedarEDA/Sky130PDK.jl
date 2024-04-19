@@ -1,0 +1,7 @@
+This package provides SKY130PDK support for Cedar EDA,
+but is not part of the Cedar EDA platform. Instead, it redistributes
+the files of an upstream PDK. This PDK is available under the terms
+of the Apache2 license (see LICENSE.APACHE2 for license terms). To
+the extent that copyrightable changes were made during the repackaging
+process, they are hereby made available under the Apache 2 license
+as well.
