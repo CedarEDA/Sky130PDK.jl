@@ -1,0 +1,9 @@
+---
+steps:
+  - label: ":unlock: Launch unsigned pipelines"
+    command: |
+      buildkite-agent pipeline upload .buildkite/runtests.yml
+    agents:
+      cryptic_capable: true
+      os: "linux"
+      arch: "x86_64"
