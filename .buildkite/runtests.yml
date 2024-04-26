@@ -10,7 +10,6 @@ steps:
           extra_registries: https://github.com/CedarEDA/PublicRegistry.git
     commands: |
       echo "--- Testing the package"
-      export JULIA_PKG_PRECOMPILE_AUTO=0 # TODO: Remove this once failure are figured out.
       julia --check-bounds=yes --project=test -e 'using Pkg; Pkg.instantiate()'
       julia --check-bounds=yes --project=test test/runtests.jl
     agents:

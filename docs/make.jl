@@ -1,10 +1,10 @@
 using Documenter
-# using Sky130PDK
+using Sky130PDK
 
 makedocs(
     sitename = "Sky130PDK",
     format = Documenter.HTML(),
-    # modules = [Sky130PDK],
+    modules = [Sky130PDK],
 )
 
 deploydocs(

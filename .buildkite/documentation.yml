@@ -26,7 +26,6 @@ steps:
       if [[ -f $${keyfile} ]]; then exit 1; fi
       echo "--- Instantiating project"
       julia -e 'import Pkg; Pkg.Registry.add(url="https://github.com/CedarEDA/PublicRegistry.git")'
-      export JULIA_PKG_PRECOMPILE_AUTO=0 # TODO: Remove this once failure are figured out.
       julia --project=docs -e 'import Pkg; Pkg.instantiate()'
       echo "--- Building and deploying"
       julia --project=docs docs/make.jl
