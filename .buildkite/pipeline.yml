@@ -1,0 +1,14 @@
+# This pipeline is not used but documents/mirrors what is currently configured
+# in the Buildkite Web UI.
+---
+steps:
+  - label: ":rocket: Launch pipelines"
+    plugins:
+      - staticfloat/cryptic#v2:
+          unsigned_pipelines:
+            - .buildkite/launch_unsigned_pipelines.yml
+    command: "true"
+    agents:
+      cryptic_capable: true
+      os: "linux"
+      arch: "x86_64"

@@ -1,0 +1,25 @@
+---
+steps:
+  - group: "Tests"
+    notify:
+      - github_commit_status:
+          context: "Tests"
+    steps:
+      - label: ":test_tube: Test the package"
+        plugins:
+          - JuliaCI/julia#v1:
+              version: "https://jc-cedarsim-juliabuilds.s3.amazonaws.com/vanilla/julia-latest-linux-x86_64.tar.gz"
+          - JuliaCI/julia-test#v1:
+              coverage: false
+              run_tests: false # Can't handle the workspaces
+              extra_registries: https://github.com/CedarEDA/PublicRegistry.git
+        commands: |
+          echo "--- Testing the package"
+          export JULIA_PKG_PRECOMPILE_AUTO=0
+          julia --check-bounds=yes --project=test -e 'using Pkg; Pkg.instantiate()'
+          julia --check-bounds=yes --project=test test/runtests.jl
+        agents:
+          os: "linux"
+          arch: "x86_64"
+        if: build.message !~ /\[skip tests\]/
+        timeout_in_minutes: 240
