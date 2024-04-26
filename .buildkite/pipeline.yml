@@ -5,6 +5,9 @@ steps:
   - label: ":rocket: Launch pipelines"
     plugins:
       - staticfloat/cryptic#v2:
+          signed_pipelines:
+            - pipeline: .buildkite/launch_signed_pipelines.yml
+              signature_file: .buildkite/launch_signed_pipelines.yml.signature
           unsigned_pipelines:
             - .buildkite/launch_unsigned_pipelines.yml
     command: "true"
