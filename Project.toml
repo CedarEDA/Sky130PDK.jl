@@ -5,7 +5,7 @@ version = "0.5.0"
 
 
 [workspace]
-projects = ["test"]
+projects = ["docs", "test"]
 
 [deps]
 BSIM4 = "fa7570ea-a14f-11ec-018e-d96f3217f940"
